@@ -1,164 +1,33 @@
-<html>
-
-<head>
-  <title>RPM Commands</title>
-  <link rel="stylesheet" type="text/css" href="/includes/idevelopment_web.css" />
-</head>
-
-<body>
-
-  <!--
-   | ******************************************************
-   |   Page Header
-   | ******************************************************
-   +-->
-
-  
-  <!--
-   | **********************************************************
-   |   HEADER CODE - (BEGIN)
-   | **********************************************************
-   +-->
-  <table border="0" width="100%">
-  <tr>
-  <td nowrap align="left" valign="top">
-
-    <a name="Top"></a>
-
-    <img src="/images/header_unix_1.png">
-
-    <p>
-      <font color="#005ca0"><b>Linux Tips</b></font>
-    </p>
-
-    <p>
-      <a class="noLinkBlue"
-         href="javascript:window.history.back()"><img src="/images/back_button.gif" border="no"></a>
-      &nbsp;&nbsp;
-      <a class="noLinkBlue"
-         href="http://www.idevelopment.info" target="_blank"><img src="/images/home_button.gif" border="no"></a>
-    </p>
-
-  </td>
-  <td nowrap align="right" valign="top">
-
-    <a href="http://swagbucks.com/refer/jeffreymhunter"><img align=top align=top alt="Search & Win" title="Search & Win" border="0" src="http://prodegebanners.sitegrip.com/images/swagbucks-173x63Alt5.jpg"></a>
-
-    &nbsp;
-
-    <a href="http://www.mathtutordvd.com/index.cfm?affID=jhunter"> <img align=top src="http://www.mathtutordvd.com/public/affiliate/images/5.jpg" width="120" height="60" alt="click me" border="no"></a>
-
-    &nbsp;
-
-    <script type="text/javascript"><!--
-    google_ad_client = "pub-7890769181671129";
-    google_ad_width = 125;
-    google_ad_height = 125;
-    google_ad_format = "125x125_as";
-    google_ad_type = "text";
-    google_ad_channel ="8809622439";
-    google_page_url = document.location;
-    google_color_border = "336699";
-    google_color_bg = "FFFFFF";
-    google_color_link = "0000FF";
-    google_color_url = "008000";
-    google_color_text = "000000";
-    //--></script>
-    <script type="text/javascript"
-      src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
-    </script>
-
-  </td>
-  </table>
-
-  <p>
-    <hr size="3" "noshade">
-  </p>
-
-  
-
-  
-
-  <p>
-    <span class="fontArticleTitle">
-      RPM Commands
-    </span>
-  </p>
-
-
-  
-
-  <p>
-    by Jeff Hunter, Sr. Database Administrator
-  </p>
-
-  
-
-  <!--
-   | **********************************************************
-   |   HEADER CODE - (END)
-   | **********************************************************
-   +-->
-
-
-  <p>
-    <br>
-  </p>
-
-  <p>
-    This document contains an overview of the principal RPM commands for 
-    installing, un-installing, upgrading, querying, listing, and checking RPM packages 
-    on your Red Hat Linux system.
-  </p>
-
-  <p align="center">
-    <table class="cellGradationTable" width="95%">
-
+    <table>
       <thead>
         <tr>
-          <th nowrap>Purpose</th>
-          <th nowrap>Description / Example</th>
+          <th >Purpose</th>
+          <th >Description / Example</th>
         </tr>
       </thead>
 
       <tbody>
 
-        <tr>
-            <td nowrap width="20%"><b><font color="#000099">Install an RPM Package</font></b></td>
-            <td          width="80%">
-              <p>            
-                RPM packages have file naming conventions
-                like <tt>foo-2.0-4.i386.rpm</tt>, which include the package name (foo), version (2.0), release (4), 
-                and architecture (i386). Also notice that RPM understands FTP and HTTP protocols for installing 
-                and querying remote RPM files.
-              </p>
-              <pre>rpm -ivh foo-2.0-4.i386.rpm
+          <tr>
+              <td>Install an RPM Package</td>
+              <td>
+                  <pre>rpm -ivh foo-2.0-4.i386.rpm
 rpm -i ftp://ftp.redhat.com/pub/redhat/RPMS/foo-1.0-1.i386.rpm
-rpm -i http://oss.oracle.com/projects/firewire/dist/files/kernel-2.4.20-18.10.1.i686.rpm</pre>
+rpm -i http://oss.oracle.com/projects/firewire/dist/files/kernel-2.4.20-18.10.1.i686.rpm
+</pre>
             </td>
         </tr>
 
         <tr>
-            <td nowrap width="20%"><b><font color="#000099">Un-install an RPM Package</font></b></td>
-            <td          width="80%">
-              <p>            
-                To un-install an RPM package, we use the package name <tt>foo</tt>, 
-                not the name of the original package file <tt>foo-2.0-4.i386.rpm</tt> above.
-              </p>
+            <td>Un-install an RPM Package</td>
+            <td>
               <pre>rpm -e foo</pre>
             </td>
         </tr>
 
         <tr>
-            <td nowrap width="20%"><b><font color="#000099">Upgrade an RPM Package</font></b></td>
-            <td          width="80%">
-              <p>            
-                To upgrade an RPM package, RPM automatically un-installs
-                the old version of the <tt>foo</tt> package and installs the new package. It is 
-                safe to always use <tt>rpm -Uvh</tt> to install and upgrade packages, since it works 
-                fine even when there are no previous versions of the package installed! Also notice 
-                that RPM understands FTP and HTTP protocols for upgrading from remote RPM files.
-              </p>
+            <td >Upgrade an RPM Package</td>
+            <td          >
               <pre>rpm -Uvh foo-1.0-2.i386.rpm
 rpm -Uvh ftp://ftp.redhat.com/pub/redhat/RPMS/foo-1.0-1.i386.rpm
 rpm -Uvh http://oss.oracle.com/projects/firewire/dist/files/kernel-2.4.20-18.10.1.i686.rpm</pre>
@@ -166,43 +35,29 @@ rpm -Uvh http://oss.oracle.com/projects/firewire/dist/files/kernel-2.4.20-18.10.
         </tr>
 
         <tr>
-            <td nowrap width="20%"><b><font color="#000099">Query all Installed Packages</font></b></td>
-            <td          width="80%">
-              <p>            
-                Use RPM to print the names of all installed packages installed on your Linux system.
-              </p>
+            <td  >Query all Installed Packages</td>
+            <td          >
               <pre>rpm -qa</pre>
             </td>
         </tr>
 
         <tr>
-            <td nowrap width="20%"><b><font color="#000099">Query an RPM Package</font></b></td>
-            <td          width="80%">
-              <p>            
-                Querying an RPM package will print the package name, 
-                version, and release number of the package <tt>foo</tt> only if it is
-                installed. Use this command 
-                to verify that a package is or is not installed on your Linux system.
-              </p>
+            <td  >Query an RPM Package</td>
+            <td          >
               <pre>rpm -q foo</pre>
-            </td>
-        </tr>
+        </td>
+    </tr>
 
-        <tr>
-            <td nowrap width="20%"><b><font color="#000099">Display Package Information</font></b></td>
-            <td          width="80%">
-              <p>            
-                RPM can display package information
-                including the package name, version, and description of the installed program.
-                Use this command to get detailed information about the installed package. 
-              </p>
+    <tr>
+        <td  >Display Package Information</td>
+            <td          >
               <pre>rpm -qi foo</pre>
             </td>
         </tr>
 
         <tr>
-            <td nowrap width="20%"><b><font color="#000099">List Files in Installed Package</font></b></td>
-            <td          width="80%">
+            <td  >List Files in Installed Package</td>
+            <td          >
               <p>            
                 The following command will list all of files in 
                 an installed RPM package. It works only when the package is already installed on 
@@ -213,8 +68,8 @@ rpm -Uvh http://oss.oracle.com/projects/firewire/dist/files/kernel-2.4.20-18.10.
         </tr>
 
         <tr>
-            <td nowrap width="20%"><b><font color="#000099">Which package owns a file?</font></b></td>
-            <td          width="80%">
+            <td  >Which package owns a file?</td>
+            <td          >
               <p>            
                 Use the following command to determine which installed package
                 a particular file belongs to.
@@ -224,14 +79,14 @@ rpm -Uvh http://oss.oracle.com/projects/firewire/dist/files/kernel-2.4.20-18.10.
 
               For example:
 
-              <pre># <b>rpm -qf /usr/bin/mysql</b>
+              <pre># rpm -qf /usr/bin/mysql
 mysql-3.23.52-3</pre>
             </td>
         </tr>
 
         <tr>
-            <td nowrap width="20%"><b><font color="#000099">List Files in RPM File</font></b></td>
-            <td          width="80%">
+            <td  >List Files in RPM File</td>
+            <td          >
               <p>            
                 Use RPM to query a (possibly) un-installed RPM file with
                 the use of the the "-p" option. You can use the "-p" option 
@@ -246,8 +101,8 @@ rpm -qpl http://oss.oracle.com/projects/firewire/dist/files/kernel-2.4.20-18.10.
         </tr>
 
         <tr>
-            <td nowrap width="20%"><b><font color="#000099">Verify an Installed Package</font></b></td>
-            <td          width="80%">
+            <td  >Verify an Installed Package</td>
+            <td          >
               <p>            
                 Use RPM to list all files that do NOT pass 
                 the verify tests (done on size, MD5 signature, etc).
@@ -273,7 +128,7 @@ T Mtime</pre>
                 Take for example the following:
               </p>
 
-              <pre># <b>rpm --verify mysql</b>
+              <pre># rpm --verify mysql
 S.5....T c /etc/my.cnf</pre>
 
               <p>
@@ -294,8 +149,8 @@ Modified Time</pre>
         </tr>
 
         <tr>
-            <td nowrap width="20%"><b><font color="#000099">Check an RPM Signature Package</font></b></td>
-            <td          width="80%">
+            <td  >Check an RPM Signature Package</td>
+            <td          >
               <p>            
                 RPM can be used to check the PGP signature 
                 of specified packages to ensure its integrity and origin. Always use this command 
@@ -309,94 +164,3 @@ Modified Time</pre>
       </tbody>
 
     </table>
-  </p>
-
-
-
-  <!--
-   | ******************************************************
-   |   Page Footer
-   | ******************************************************
-   +-->
-
-  
-  <!--
-   | **********************************************************
-   |   FOOTER CODE  -  (BEGIN)
-   | **********************************************************
-   +-->
-
-  <p><br></p>
-
-  <center>
-    <script type="text/javascript"><!--
-    google_ad_client = "pub-7890769181671129";
-    google_ad_width = 728;
-    google_ad_height = 90;
-    google_ad_format = "728x90_as";
-    google_ad_type = "text";
-    google_ad_channel ="8809622439";
-    google_page_url = document.location;
-    google_color_border = "336699";
-    google_color_bg = "FFFFFF";
-    google_color_link = "0000FF";
-    google_color_url = "008000";
-    google_color_text = "000000";
-    //--></script>
-
-    <script type="text/javascript"
-      src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
-    </script>
-  </center>
-
-  <!--
-   | **********************************************************
-   |   END OF PAGE - (COPYRIGHT AND DISCLAIMER)
-   | **********************************************************
-   +-->
-  <hr size="3" "noshade">
-
-  
-        <center>
-          <p>
-              <b><font color="#693019">Copyright (c) 1998-2012 Jeffrey M. Hunter. All rights reserved.</font></b>
-          </p>
-          <p>
-            <small>
-              <font color="black">
-              All articles, scripts and material located at the Internet address of <a class="noLinkBlue" target="_blank" href="http://www.idevelopment.info">http://www.idevelopment.info</a> is the copyright of Jeffrey M. Hunter
-              and is protected under copyright laws of the United States. This document may not be hosted on any other site without my express,
-              prior, written permission. Application to host any of the material elsewhere can be made by contacting me at <a class="noLinkBlue" href="mailto:jhunter@idevelopment.info">jhunter@idevelopment.info</a>.
-              </font>
-            </small>
-          </p>
-          <p>
-            <small>
-              <font color="black">
-              I have made every effort and taken great care in making sure that the material included on my web site is technically accurate,
-              but I disclaim any and all responsibility for any loss, damage or destruction of data or any other property which may arise from
-              relying on it. I will in no case be liable for any monetary damages arising from such loss, damage or destruction.
-              </font>
-            </small>
-          </p>
-        </center>
-    
-
-  <center>
-    <small>
-      <p>
-        Last modified on<br>Wednesday, 28-Dec-2011 14:10:13 EST<br>
-        <font color="#ffffff">Page Count: 496180</font>
-      </p>
-    </small>
-  </center>
-
-  <!--
-   | **********************************************************
-   |   FOOTER CODE - (END)
-   | **********************************************************
-   +-->
-
-
-</body>
-</html>
