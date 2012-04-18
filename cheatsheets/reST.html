@@ -1,0 +1,1163 @@
+<h3>Inline Markup</h3>
+<p>Inline markup allows words and phrases within text to have character styles (like italics and boldface) and functionality (like hyperlinks).</p>
+<table border="1">
+<tr>
+<td>
+<pre>
+*emphasis*
+</pre>
+</td>
+<td><em>emphasis</em></td>
+</tr>
+<tr>
+<td>
+<pre>
+**strong emphasis**
+</pre>
+</td>
+<td><strong>strong emphasis</strong></td>
+</tr>
+<tr>
+<td>
+<pre>
+`interpreted text`
+</pre>
+</td>
+<td>The rendering and meaning of interpreted text
+is domain- or application-dependent.</td>
+</tr>
+<tr>
+<td>
+<pre>
+``inline literal``
+</pre>
+</td>
+<td><tt>inline literal</tt></td>
+</tr>
+<tr>
+<td>
+<pre>
+reference_
+</pre>
+</td>
+<td><a href="http://docutils.sourceforge.net/docs/user/rst/quickref.html#hyperlink-targets">phrase reference</a></td>
+</tr>
+<tr>
+<td>
+<pre>
+`phrase reference`_
+</pre>
+</td>
+<td><a href="http://docutils.sourceforge.net/docs/user/rst/quickref.html#hyperlink-targets">phrase reference</a></td>
+</tr>
+<tr>
+<td>
+<pre>
+anonymous__
+</pre>
+</td>
+<td><a href="http://docutils.sourceforge.net/docs/user/rst/quickref.html#hyperlink-targets">anonymous</a></td>
+</tr>
+<tr>
+<td>
+<pre>
+_`inline internal target`
+</pre>
+</td>
+<td>inline internal target</td>
+</tr>
+<tr>
+<td>
+<pre>
+|substitution reference|
+</pre>
+</td>
+<td>The result is substituted in from the
+substitution definition.</td>
+</tr>
+<tr>
+<td>
+<pre>
+footnote reference [1]_
+</pre>
+</td>
+<td>footnote reference <a href="#id8">[1]</a>
+</td>
+</tr>
+<tr>
+<td>
+<pre>
+citation reference [CIT2002]_
+</pre>
+</td>
+<td>citation reference <a href="#cit2002">[CIT2002]</a>
+</td>
+</tr>
+<tr>
+<td>
+<pre>
+<a href="http://docutils.sf.net/">http://docutils.sf.net/</a>
+</pre>
+</td>
+<td><a href="http://docutils.sf.net/">http://docutils.sf.net/</a></td>
+</tr>
+</table> 
+ 
+<h3>Escaping with Backslashes</h3>
+<p>reStructuredText uses backslashes ("") to override the special meaning given to markup characters and get
+the literal characters themselves. To get a literal backslash, use an escaped backslash ("\"). For example:</p>
+<table border="1">
+<tr>
+<td>
+<pre>
+*escape* ``with`` "\"
+</pre>
+</td>
+<td>
+<em>escape</em> <tt>with</tt> ""</td>
+</tr>
+<tr>
+<td>
+<pre>
+\*escape* \``with`` "\\"
+</pre>
+</td>
+<td>*escape* ``with`` "\"</td>
+</tr>
+</table> 
+ 
+<h3>Lists</h3>
+<table border="1">
+<tr>
+<td>
+<pre>
+- This is item 1. A blank line before the first
+  and last items is required.
+- This is item 2
+
+- Item 3: blank lines between items are optional.
+- Item 4: Bullets are "-", "*" or "+".
+  Continuing text must be aligned after the bullet
+  and whitespace.
+</pre>
+</td>
+<td><ul>
+<li>This is item 1. A blank line before the first
+and last items is required.</li>
+<li>This is item 2</li>
+<li>Item 3: blank lines between items are optional.</li>
+<li>Item 4: Bullets are "-", "*" or "+".
+Continuing text must be aligned after the bullet
+and whitespace.</li>
+</ul></td>
+</tr>
+<tr>
+<td>
+<pre>
+3. This is the first item
+4. This is the second item
+5. Enumerators are arabic numbers,
+   single letters, or roman numerals
+6. List items should be sequentially
+   numbered, but need not start at 1
+   (although not all formatters will
+   honour the first index).
+#. This item is auto-enumerated
+</pre>
+</td>
+<td><ol start="3">
+<li>This is the first item</li>
+<li>This is the second item</li>
+<li>Enumerators are arabic numbers,
+single letters, or roman numerals</li>
+<li>List items should be sequentially
+numbered, but need not start at 1
+(although not all formatters will
+honour the first index).</li>
+<li>This item is auto-enumerated</li>
+</ol></td>
+</tr>
+<tr>
+<td>
+<pre>
+what
+  Definition lists associate a term with
+  a definition.
+
+how
+  The term is a one-line phrase, and the
+  definition is one or more paragraphs or
+  body elements, indented relative to the
+  term. Blank lines are not allowed
+  between term and definition.
+</pre>
+</td>
+<td><dl>
+<dt>what</dt>
+<dd>Definition lists associate a term with
+a definition.</dd>
+<dt>how</dt>
+<dd>The term is a one-line phrase, and the
+definition is one or more paragraphs or
+body elements, indented relative to the
+term. Blank lines are not allowed
+between term and definition.</dd>
+</dl></td>
+</tr>
+<tr>
+<td>
+<pre>
+:Authors:
+    Tony J. (Tibs) Ibbs,
+    David Goodger
+
+    (and sundry other good-natured folks)
+
+:Version: 1.0 of 2001/08/08
+:Dedication: To my father.
+</pre>
+</td>
+<td><table frame="void" rules="none">
+<tr>
+<th>Authors:</th>
+<td>
+<p>Tony J. (Tibs) Ibbs,
+David Goodger</p>
+<p>(and sundry other good-natured folks)</p>
+</td>
+</tr>
+<tr>
+<th>Version:</th>
+<td>
+<p>1.0 of 2001/08/08</p>
+</td>
+</tr>
+<tr>
+<th>Dedication:</th>
+<td>
+<p>To my father.</p>
+</td>
+</tr>
+</table></td>
+</tr>
+<tr>
+<td>
+<pre>
+-a            command-line option "a"
+-b file       options can have arguments
+              and long descriptions
+--long        options can be long also
+--input=file  long options can also have
+              arguments
+/V            DOS/VMS-style options too
+</pre>
+</td>
+<td><table frame="void" rules="none">
+<tr>
+<td>
+<kbd>-a</kbd>
+</td>
+<td>command-line option "a"</td>
+</tr>
+<tr>
+<td>
+<kbd>-b <var>file</var></kbd>
+</td>
+<td>options can have arguments
+and long descriptions</td>
+</tr>
+<tr>
+<td>
+<kbd>--long</kbd>
+</td>
+<td>options can be long also</td>
+</tr>
+<tr>
+<td>
+<kbd>--input=<var>file</var></kbd>
+</td>
+<td>long options can also have
+arguments</td>
+</tr>
+<tr>
+<td>
+<kbd>/V</kbd>
+</td>
+<td>DOS/VMS-style options too</td>
+</tr>
+</table></td>
+</tr>
+</table> 
+ 
+<h3>Section Structure</h3>
+<table border="1"><tr>
+<td>
+<pre>
+Title
+=====
+
+Titles are underlined (or over- and underlined) with
+a nonalphanumeric character at least as long as the
+text.
+
+A lone top-level section is lifted up to be the
+document's title
+</pre>
+</td>
+<td>
+<p>Title</p>
+<p>Titles are underlined (or over- and underlined) with
+a nonalphanumeric character at least as long as the
+text.</p>
+<p>A lone top-level section is lifted up to be the
+document's title</p>
+</td>
+</tr></table> 
+ 
+<h3>Blocks</h3>
+<table border="1">
+<tr>
+<td>
+<pre>
+This is a paragraph.
+
+Paragraphs line up at their left edges, and are
+normally separated by blank lines.
+</pre>
+</td>
+<td>
+<p>This is a paragraph.</p>
+<p>Paragraphs line up at their left
+edges, and are normally separated
+by blank lines.</p>
+</td>
+</tr>
+<tr>
+<td>
+<pre>
+A paragraph containing only two colons indicates
+the following indented or quoted text is a literal
+block or quoted text is a literal block.
+
+::
+
+  Whitespace, newlines, blank lines, and  all kinds of
+  markup (like *this* or \this) is preserved here.
+
+You can also tack the ``::`` at the end of a
+paragraph::
+
+   It's very convenient to use this form.
+
+Per-line quoting can also be used for unindented
+blocks::
+
+&gt; Useful for quotes from email and
+&gt; for Haskell literate programming.
+</pre>
+</td>
+<td>
+<p>A paragraph containing only two colons
+indicates that the following indented
+or quoted text is a literal block.</p>
+<pre>
+Whitespace, newlines, blank lines, and
+all kinds of markup (like *this* or
+\this) is preserved by literal blocks.
+</pre>
+<p>You can also tack the <tt>::</tt> at the end of a
+paragraph:</p>
+<pre>
+It's very convenient to use this form.
+</pre>
+<p>Per-line quoting can also be used for
+unindented blocks:</p>
+<pre>
+&gt; Useful for quotes from email and
+&gt; for Haskell literate programming.
+</pre>
+</td>
+</tr>
+<tr>
+<td>
+<pre>
+| Line blocks are useful for addresses,
+| verse, and adornment-free lists.
+|
+| Each new line begins with a
+| vertical bar ("|").
+|     Line breaks and initial indents
+|     are preserved.
+| Continuation lines are wrapped
+  portions of long lines; they begin
+  with spaces in place of vertical bars.
+</pre>
+</td>
+<td> 
+ Line blocks are useful for addresses, 
+ verse, and adornment-free lists. 
+ <br> 
+ Each new line begins with a 
+ vertical bar ("|"). 
+ 
+ Line breaks and initial indents 
+ are preserved. 
+ 
+ Continuation lines are wrapped
+portions of long lines; they begin
+with spaces in place of vertical bars. 
+ 
+</td>
+</tr>
+<tr>
+<td>
+<pre>
+Block quotes are just:
+
+    Indented paragraphs,
+
+        and they may nest.
+</pre>
+</td>
+<td>
+<p>Block quotes are just:</p>
+<blockquote>
+<p>Indented paragraphs,</p>
+<blockquote>
+and they may nest.</blockquote>
+</blockquote>
+</td>
+</tr>
+<tr>
+<td>
+<pre>
+Doctest blocks are interactive
+Python sessions. They begin with
+"``&gt;&gt;&gt;``" and end with a blank line.
+
+&gt;&gt;&gt; print "This is a doctest block."
+This is a doctest block.
+</pre>
+</td>
+<td>
+<p>Doctest blocks are interactive
+Python sessions. They begin with
+"<tt>&gt;&gt;&gt;</tt>" and end with a blank line.</p>
+<pre>
+&gt;&gt;&gt; print "This is a doctest block."
+This is a doctest block.
+</pre>
+</td>
+</tr>
+<tr>
+<td>
+<pre>
+A transition marker is a horizontal line
+of 4 or more repeated punctuation
+characters.
+
+------------
+
+A transition should not begin or end a
+section or document, nor should two
+transitions be immediately adjacent.
+</pre>
+</td>
+<td>
+<p>A transition marker is a horizontal line
+of 4 or more repeated punctuation
+characters.</p>
+<table border="1"><tr>
+<td> </td>
+</tr></table>
+<p>A transition should not begin or end a
+section or document, nor should two
+transitions be immediately adjacent.</p>
+</td>
+</tr>
+</table> 
+ 
+<h3>Tables</h3>
+<p>There are two syntaxes for tables in reStructuredText. Grid tables are complete but cumbersome to create. Simple
+tables are easy to create but limited (no row spans, etc.).</p>
+<table border="1">
+<tr>
+<td>
+<pre>
++------------+------------+-----------+
+| Header 1   | Header 2   | Header 3  |
++============+============+===========+
+| body row 1 | column 2   | column 3  |
++------------+------------+-----------+
+| body row 2 | Cells may span columns.|
++------------+------------+-----------+
+| body row 3 | Cells may  | - Cells   |
++------------+ span rows. | - contain |
+| body row 4 |            | - blocks. |
++------------+------------+-----------+
+</pre>
+</td>
+<td><table border="1">
+<tr>
+<th>Header 1</th>
+<th>Header 2</th>
+<th>Header 3</th>
+</tr>
+<tr>
+<td>body row 1</td>
+<td>column 2</td>
+<td>column 3</td>
+</tr>
+<tr>
+<td>body row 2</td>
+<td colspan="2">Cells may span columns.</td>
+</tr>
+<tr>
+<td>body row 3</td>
+<td rowspan="2">Cells may
+span rows.</td>
+<td rowspan="2"><ul>
+<li>Cells</li>
+<li>contain</li>
+<li>blocks.</li>
+</ul></td>
+</tr>
+<tr>
+<td>body row 4</td>
+</tr>
+</table></td>
+</tr>
+<tr>
+<td>
+<pre>
+=====  =====  ======
+   Inputs     Output
+------------  ------
+  A      B    A or B
+=====  =====  ======
+False  False  False
+True   False  True
+False  True   True
+True   True   True
+=====  =====  ======
+</pre>
+</td>
+<td><table border="1">
+<tr>
+<th colspan="2">Inputs</th>
+<th>Output</th>
+</tr>
+<tr>
+<th>A</th>
+<th>B</th>
+<th>A or B</th>
+</tr>
+<tr>
+<td>False</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>True</td>
+<td>False</td>
+<td>True</td>
+</tr>
+<tr>
+<td>False</td>
+<td>True</td>
+<td>True</td>
+</tr>
+<tr>
+<td>True</td>
+<td>True</td>
+<td>True</td>
+</tr>
+</table></td>
+</tr>
+</table> 
+ 
+<h3>Explicit Markup</h3>
+<p>Explicit markup blocks are used for constructs which float (footnotes), have no direct paper-document representation
+(hyperlink targets, comments), or require specialized processing (directives).
+They all begin with two periods and whitespace, the "explicit markup start".</p>
+<table border="1">
+<tr>
+<td>
+<pre>
+Footnote references, like [5]_.
+Note that footnotes may get
+rearranged, e.g., to the bottom of
+the "page".
+
+.. [5] A numerical footnote. Note
+   there's no colon after the ``]``.
+</pre>
+</td>
+<td>
+<p>Footnote references, like <a href="#id5">[5]</a>.
+Note that footnotes may get
+rearranged, e.g., to the bottom of
+the "page".</p>
+<table frame="void" rules="none"><tr>
+<td><a href="#id4">[5]</a></td>
+<td>A numerical footnote. Note
+there's no colon after the <tt>]</tt>.</td>
+</tr></table>
+</td>
+</tr>
+<tr>
+<td>
+<pre>
+Autonumbered footnotes are
+possible, like using [#]_ and [#]_.
+
+.. [#] This is the first one.
+.. [#] This is the second one.
+
+They may be assigned 'autonumber
+labels' - for instance,
+[#fourth]_ and [#third]_.
+
+.. [#third] a.k.a. third_
+
+.. [#fourth] a.k.a. fourth_
+</pre>
+</td>
+<td>
+<p>Autonumbered footnotes are
+possible, like using <a href="#id8">[1]</a> and <a href="#id9">[2]</a>.</p>
+<table frame="void" rules="none"><tr>
+<td><a href="#id6">[1]</a></td>
+<td>This is the first one.</td>
+</tr></table>
+<table frame="void" rules="none"><tr>
+<td><a href="#id7">[2]</a></td>
+<td>This is the second one.</td>
+</tr></table>
+<p>They may be assigned 'autonumber
+labels' - for instance,
+<a href="#fourth">[4]</a> and <a href="#third">[3]</a>.</p>
+<table frame="void" rules="none"><tr>
+<td><a href="#id11">[3]</a></td>
+<td>a.k.a. <a href="#third">third</a>
+</td>
+</tr></table>
+<table frame="void" rules="none"><tr>
+<td><a href="#id10">[4]</a></td>
+<td>a.k.a. <a href="#fourth">fourth</a>
+</td>
+</tr></table>
+</td>
+</tr>
+<tr>
+<td>
+<pre>
+Auto-symbol footnotes are also
+possible, like this: [*]_ and [*]_.
+
+.. [*] This is the first one.
+.. [*] This is the second one.
+</pre>
+</td>
+<td>
+<p>Auto-symbol footnotes are also
+possible, like this: <a href="#id14">[*]</a> and <a href="#id15">[†]</a>.</p>
+<table frame="void" rules="none"><tr>
+<td><a href="#id12">[*]</a></td>
+<td>This is the first one.</td>
+</tr></table>
+<table frame="void" rules="none"><tr>
+<td><a href="#id13">[†]</a></td>
+<td>This is the second one.</td>
+</tr></table>
+</td>
+</tr>
+<tr>
+<td>
+<pre>
+Citation references, like [CIT2002]_.
+Note that citations may get
+rearranged, e.g., to the bottom of
+the "page".
+
+.. [CIT2002] A citation
+   (as often used in journals).
+
+Citation labels contain alphanumerics,
+underlines, hyphens and fullstops.
+Case is not significant.
+
+Given a citation like [this]_, one
+can also refer to it like this_.
+
+.. [this] here.
+</pre>
+</td>
+<td>
+<p>Citation references, like <a href="#cit2002">[CIT2002]</a>.
+Note that citations may get
+rearranged, e.g., to the bottom of
+the "page".</p>
+<table frame="void" rules="none"><tr>
+<td>[CIT2002]</td>
+<td>
+<em>(<a href="#id2">1</a>, <a href="#id16">2</a>)</em> A citation
+(as often used in journals).</td>
+</tr></table>
+<p>Citation labels contain alphanumerics,
+underlines, hyphens and fullstops.
+Case is not significant.</p>
+<p>Given a citation like <a href="#this">[this]</a>, one
+can also refer to it like <a href="#this">this</a>.</p>
+<table frame="void" rules="none"><tr>
+<td><a href="#id17">[this]</a></td>
+<td>here.</td>
+</tr></table>
+</td>
+</tr>
+<tr>
+<td>
+<pre>
+External hyperlinks, like Python_.
+
+.. _Python: <a href="http://www.python.org/">http://www.python.org/</a>
+</pre>
+</td>
+<td>External hyperlinks, like <a href="http://www.python.org/">Python</a>.</td>
+</tr>
+<tr>
+<td>
+<pre>
+External hyperlinks, like `Python
+&lt;<a href="http://www.python.org/&gt;`_">http://www.python.org/&gt;`_</a>.
+</pre>
+</td>
+<td>External hyperlinks, like <a href="http://www.python.org/">Python</a>.</td>
+</tr>
+<tr>
+<td>
+<pre>
+Internal crossreferences, like example_.
+
+.. _example:
+
+This is an example crossreference target.
+</pre>
+</td>
+<td>
+<p>Internal crossreferences, like <a href="#example">example</a>.</p>
+<p>This is an example crossreference target.</p>
+</td>
+</tr>
+<tr>
+<td>
+<pre>
+Python_ is `my favourite
+programming language`__.
+
+.. _Python: <a href="http://www.python.org/">http://www.python.org/</a>
+
+__ Python_
+</pre>
+</td>
+<td>
+<a href="http://www.python.org/">Python</a> is <a href="http://www.python.org/">my favourite
+programming language</a>.</td>
+</tr>
+<tr>
+<td>
+<pre>
+Titles are targets, too
+=======================
+
+Implict references, like `Titles are targets, too`_.
+</pre>
+</td>
+<td>
+<p>Titles are targets, too</p>
+<p>Implict references, like
+<a href="#titles-are-targets-too">Titles are targets, too</a>.</p>
+</td>
+</tr>
+<tr>
+<td colspan="2">Directives are a general-purpose extension mechanism, a way of adding support for new constructs without adding
+new syntax. For a description of all standard directives, see reStructuredText Directives (<a href="http://is.gd/2Ecqh">http://is.gd/2Ecqh</a>).</td>
+</tr>
+<tr>
+<td>
+<pre>
+For instance:
+
+.. image:: magnetic-balls.jpg
+   :width: 40pt
+</pre>
+</td>
+<td>
+<p>For instance:</p>
+<img alt="magnetic-balls.jpg" src="magnetic-balls.jpg">
+</td>
+</tr>
+<tr>
+<td colspan="2">Substitutions are like inline directives, allowing graphics and arbitrary constructs within text.</td>
+</tr>
+<tr>
+<td>
+<pre>
+The |biohazard| symbol must be used on containers used to
+dispose of medical waste.
+
+.. |biohazard| image:: biohazard.png
+   :align: middle
+   :width: 12
+</pre>
+</td>
+<td>The <img align="middle" alt="biohazard" src="biohazard.png"> symbol must be used on containers used to
+dispose of medical waste.</td>
+</tr>
+<tr>
+<td colspan="2">Any text which begins with an explicit markup start but doesn't use the syntax of any of the constructs above, is a comment.</td>
+</tr>
+<tr>
+<td>
+<pre>
+.. This text will not be shown
+   (but, for instance, in HTML might be
+   rendered as an HTML comment)
+</pre>
+</td>
+<td> </td>
+</tr>
+<tr>
+<td>
+<pre>
+An "empty comment" does not
+consume following blocks.
+(An empty comment is ".." with
+blank lines before and after.)
+
+..
+
+        So this block is not "lost",
+        despite its indentation.
+</pre>
+</td>
+<td>
+<p>An "empty comment" does not
+consume following blocks.
+(An empty comment is ".." with
+blank lines before and after.)</p>
+<blockquote>
+So this block is not "lost",
+despite its indentation.</blockquote>
+</td>
+</tr>
+</table> 
+ 
+
+<div id="keyboard_shortcuts_pane" class="instapaper_ignore readability-extra" style="display:none">
+  <h2>Keyboard Shortcuts <small><a href="#" class="js-see-all-keyboard-shortcuts">(see all)</a></small></h2>
+
+  <div class="columns threecols">
+    <div class="column first">
+      <h3>Site wide shortcuts</h3>
+      <dl class="keyboard-mappings">
+        <dt>s</dt>
+        <dd>Focus site search</dd>
+      </dl>
+      <dl class="keyboard-mappings">
+        <dt>?</dt>
+        <dd>Bring up this help dialog</dd>
+      </dl>
+    </div><!-- /.column.first -->
+
+    <div class="column middle" style='display:none'>
+      <h3>Commit list</h3>
+      <dl class="keyboard-mappings">
+        <dt>j</dt>
+        <dd>Move selection down</dd>
+      </dl>
+      <dl class="keyboard-mappings">
+        <dt>k</dt>
+        <dd>Move selection up</dd>
+      </dl>
+      <dl class="keyboard-mappings">
+        <dt>c <em>or</em> o <em>or</em> enter</dt>
+        <dd>Open commit</dd>
+      </dl>
+      <dl class="keyboard-mappings">
+        <dt>y</dt>
+        <dd>Expand URL to its canonical form</dd>
+      </dl>
+    </div><!-- /.column.first -->
+
+    <div class="column last" style='display:none'>
+      <h3>Pull request list</h3>
+      <dl class="keyboard-mappings">
+        <dt>j</dt>
+        <dd>Move selection down</dd>
+      </dl>
+      <dl class="keyboard-mappings">
+        <dt>k</dt>
+        <dd>Move selection up</dd>
+      </dl>
+      <dl class="keyboard-mappings">
+        <dt>o <em>or</em> enter</dt>
+        <dd>Open issue</dd>
+      </dl>
+    </div><!-- /.columns.last -->
+
+  </div><!-- /.columns.equacols -->
+
+  <div style='display:none'>
+    <div class="rule"></div>
+
+    <h3>Issues</h3>
+
+    <div class="columns threecols">
+      <div class="column first">
+        <dl class="keyboard-mappings">
+          <dt>j</dt>
+          <dd>Move selection down</dd>
+        </dl>
+        <dl class="keyboard-mappings">
+          <dt>k</dt>
+          <dd>Move selection up</dd>
+        </dl>
+        <dl class="keyboard-mappings">
+          <dt>x</dt>
+          <dd>Toggle selection</dd>
+        </dl>
+        <dl class="keyboard-mappings">
+          <dt>o <em>or</em> enter</dt>
+          <dd>Open issue</dd>
+        </dl>
+      </div><!-- /.column.first -->
+      <div class="column middle">
+        <dl class="keyboard-mappings">
+          <dt>I</dt>
+          <dd>Mark selection as read</dd>
+        </dl>
+        <dl class="keyboard-mappings">
+          <dt>U</dt>
+          <dd>Mark selection as unread</dd>
+        </dl>
+        <dl class="keyboard-mappings">
+          <dt>y</dt>
+          <dd>Remove selection from view</dd>
+        </dl>
+      </div><!-- /.column.middle -->
+      <div class="column last">
+        <dl class="keyboard-mappings">
+          <dt>c</dt>
+          <dd>Create issue</dd>
+        </dl>
+        <dl class="keyboard-mappings">
+          <dt>l</dt>
+          <dd>Create label</dd>
+        </dl>
+        <dl class="keyboard-mappings">
+          <dt>i</dt>
+          <dd>Back to inbox</dd>
+        </dl>
+        <dl class="keyboard-mappings">
+          <dt>u</dt>
+          <dd>Back to issues</dd>
+        </dl>
+        <dl class="keyboard-mappings">
+          <dt>/</dt>
+          <dd>Focus issues search</dd>
+        </dl>
+      </div>
+    </div>
+  </div>
+
+  <div style='display:none'>
+    <div class="rule"></div>
+
+    <h3>Issues Dashboard</h3>
+
+    <div class="columns threecols">
+      <div class="column first">
+        <dl class="keyboard-mappings">
+          <dt>j</dt>
+          <dd>Move selection down</dd>
+        </dl>
+        <dl class="keyboard-mappings">
+          <dt>k</dt>
+          <dd>Move selection up</dd>
+        </dl>
+        <dl class="keyboard-mappings">
+          <dt>o <em>or</em> enter</dt>
+          <dd>Open issue</dd>
+        </dl>
+      </div><!-- /.column.first -->
+    </div>
+  </div>
+
+  <div style='display:none'>
+    <div class="rule"></div>
+
+    <h3>Network Graph</h3>
+    <div class="columns equacols">
+      <div class="column first">
+        <dl class="keyboard-mappings">
+          <dt><span class="badmono">←</span> <em>or</em> h</dt>
+          <dd>Scroll left</dd>
+        </dl>
+        <dl class="keyboard-mappings">
+          <dt><span class="badmono">→</span> <em>or</em> l</dt>
+          <dd>Scroll right</dd>
+        </dl>
+        <dl class="keyboard-mappings">
+          <dt><span class="badmono">↑</span> <em>or</em> k</dt>
+          <dd>Scroll up</dd>
+        </dl>
+        <dl class="keyboard-mappings">
+          <dt><span class="badmono">↓</span> <em>or</em> j</dt>
+          <dd>Scroll down</dd>
+        </dl>
+        <dl class="keyboard-mappings">
+          <dt>t</dt>
+          <dd>Toggle visibility of head labels</dd>
+        </dl>
+      </div><!-- /.column.first -->
+      <div class="column last">
+        <dl class="keyboard-mappings">
+          <dt>shift <span class="badmono">←</span> <em>or</em> shift h</dt>
+          <dd>Scroll all the way left</dd>
+        </dl>
+        <dl class="keyboard-mappings">
+          <dt>shift <span class="badmono">→</span> <em>or</em> shift l</dt>
+          <dd>Scroll all the way right</dd>
+        </dl>
+        <dl class="keyboard-mappings">
+          <dt>shift <span class="badmono">↑</span> <em>or</em> shift k</dt>
+          <dd>Scroll all the way up</dd>
+        </dl>
+        <dl class="keyboard-mappings">
+          <dt>shift <span class="badmono">↓</span> <em>or</em> shift j</dt>
+          <dd>Scroll all the way down</dd>
+        </dl>
+      </div><!-- /.column.last -->
+    </div>
+  </div>
+
+  <div >
+    <div class="rule"></div>
+    <div class="columns threecols">
+      <div class="column first" >
+        <h3>Source Code Browsing</h3>
+        <dl class="keyboard-mappings">
+          <dt>t</dt>
+          <dd>Activates the file finder</dd>
+        </dl>
+        <dl class="keyboard-mappings">
+          <dt>l</dt>
+          <dd>Jump to line</dd>
+        </dl>
+        <dl class="keyboard-mappings">
+          <dt>w</dt>
+          <dd>Switch branch/tag</dd>
+        </dl>
+        <dl class="keyboard-mappings">
+          <dt>y</dt>
+          <dd>Expand URL to its canonical form</dd>
+        </dl>
+      </div>
+    </div>
+  </div>
+</div>
+
+    <div id="markdown-help" class="instapaper_ignore readability-extra">
+  <h2>Markdown Cheat Sheet</h2>
+
+  <div class="cheatsheet-content">
+
+  <div class="mod">
+    <div class="col">
+      <h3>Format Text</h3>
+      <p>Headers</p>
+      <pre>
+# This is an &lt;h1&gt; tag
+## This is an &lt;h2&gt; tag
+###### This is an &lt;h6&gt; tag</pre>
+     <p>Text styles</p>
+     <pre>
+*This text will be italic*
+_This will also be italic_
+**This text will be bold**
+__This will also be bold__
+
+*You **can** combine them*
+</pre>
+    </div>
+    <div class="col">
+      <h3>Lists</h3>
+      <p>Unordered</p>
+      <pre>
+* Item 1
+* Item 2
+  * Item 2a
+  * Item 2b</pre>
+     <p>Ordered</p>
+     <pre>
+1. Item 1
+2. Item 2
+3. Item 3
+   * Item 3a
+   * Item 3b</pre>
+    </div>
+    <div class="col">
+      <h3>Miscellaneous</h3>
+      <p>Images</p>
+      <pre>
+![GitHub Logo](/images/logo.png)
+Format: ![Alt Text](url)
+</pre>
+     <p>Links</p>
+     <pre>
+http://github.com - automatic!
+[GitHub](http://github.com)</pre>
+<p>Blockquotes</p>
+     <pre>
+As Kanye West said:
+
+> We're living the future so
+> the present is our past.
+</pre>
+    </div>
+  </div>
+  <div class="rule"></div>
+
+  <h3>Code Examples in Markdown</h3>
+  <div class="col">
+      <p>Syntax highlighting with <a href="http://github.github.com/github-flavored-markdown/" title="GitHub Flavored Markdown" target="_blank">GFM</a></p>
+      <pre>
+```javascript
+function fancyAlert(arg) {
+  if(arg) {
+    $.facebox({div:'#foo'})
+  }
+}
+```</pre>
+    </div>
+    <div class="col">
+      <p>Or, indent your code 4 spaces</p>
+      <pre>
+Here is a Python code example
+without syntax highlighting:
+
+    def foo:
+      if not bar:
+        return true</pre>
+    </div>
+    <div class="col">
+      <p>Inline code for comments</p>
+      <pre>
+I think you should use an
+`&lt;addr&gt;` element here instead.</pre>
+    </div>
+  </div>
+
+  </div>
+
